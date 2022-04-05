@@ -1,0 +1,140 @@
+
+
+
+
+.emptyUsercart{
+    background-color: aquamarine;
+    margin-top: 36vh;
+    font-size: 60px;    
+    border: 1px solid lightblue;
+    z-index: 20;
+    
+}
+
+.zero_products_cart{
+    margin-top: 10px;
+    font-size: 24px;
+    z-index: 20;
+}
+
+.proceed_to_add_products{
+    font-size: 24px;
+    width: 20%;
+}
+/* .foraddress-btn{
+    position:sticky;
+    bottom: 0;
+} */
+.user_cart_address_btn{
+    margin-left: 25%;
+    background-color: rgb(201, 196, 188);
+    width: 45%;
+    padding-left: 5%;
+    height: 15%;
+    
+}
+.address_btn_color{
+    padding: 2% 3% 3% 2%;
+    background-color: rgb(61, 27, 184);
+    color: white;
+    margin-left: 30%;
+    margin-top: 10%;
+    
+}
+.UserAdresss{
+    padding:1% 3% 3% 1%;
+    border: none;
+    border-bottom: 3px solid rgb(173, 97, 110);
+    margin-top: 10%;
+    color: blue;
+    margin-left: 10%;
+}
+.button_twobtn_color{
+    padding: 1% 2% 2% 1%;
+    background-color: rgb(61, 27, 184);
+    border-radius: 45%;
+    color: white;
+}
+.parentofall{
+    display: flex;
+    flex-direction: column;
+    background-color: limegreen;
+}
+
+.cart_products_all_data{
+    background-color: rgb(81, 207, 167);
+    width: 50vw;
+    margin: auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: space-around;
+    border: 0.5px solid lightblue;
+}
+
+.img_user_product{
+    height:20vh;
+    width: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_cart_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user_cart_price,.user_cart_remove_btn{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.user_cart_price{
+    font-size: 28px;
+}
+
+
+.usercart_removeitem-btn{
+    height:30%;
+    width: 100%;
+    font-size: 25px;
+    background-color: red;
+    color: white;
+    border-radius: 15%;
+}
+
+
+
+.item_remove_alert{
+    color: red;
+    font-size: 24px;
+    font-weight:600;
+    border: 1px solid red;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;    
+}
+
+.proceed-btn{
+    width: 50%;
+    font-size: 28px;
+    background-color: red;
+    color: rgb(243, 231, 231);
+    margin-left: 20%;
+}
+
+.proceedtocancel{
+    font-size: 20px;
+}
+
+.for-addingaddress{
+    width:16%;
+    font-size: 28px;
+    margin-left: 79vw;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: blue;
+}
