@@ -17,7 +17,7 @@ function Productview() {
   //     token : 
   // }}
   useEffect(() => {
-    axios.get("http://localhost:8080/users/productview").then((res) => {
+    axios.get(`https://productapp-backend.herokuapp.com/users/productview`).then((res) => {
       console.log(res);
       setProducts(res.data);
       setAddress(res.address)

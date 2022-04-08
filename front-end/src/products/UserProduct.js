@@ -17,7 +17,7 @@ const history = useHistory()
     const addToCart = async  () => {
       setShow(false)
       if (props.bool){
-        await  axios.post(`http://localhost:5000/UserAddtocart?id=${props.Product_ID}&userID=${userid}`,UserProducts ,config)
+        await  axios.post(`https://productapp-backend.herokuapp.com/UserAddtocart?id=${props.Product_ID}&userID=${userid}`,UserProducts ,config)
         .then((res)=>{console.log('aded to cart',res)})
       }else{
         history.push('/login')
@@ -28,7 +28,7 @@ const history = useHistory()
       
       setwishshow(false)
       if (props.bool){
-        await  axios.post(`http://localhost:5000/UserAddtowishlist?id=${props.Product_ID}&userID=${userid}`,UserProducts ,config)
+        await  axios.post(`https://productapp-backend.herokuapp.com/UserAddtowishlist?id=${props.Product_ID}&userID=${userid}`,UserProducts ,config)
         .then((res)=>{console.log('aded to wish list',res)})
       }else{
         history.push('/login')

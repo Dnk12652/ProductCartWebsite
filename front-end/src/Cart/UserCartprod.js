@@ -19,14 +19,14 @@ function Cartprod(props) {
   
   const Removeitem=()=>{
     if (props.action==="cart"){
-    axios.delete(`http://localhost:5000/userremoveitem?id=${props.Product_ID}&userID=${currUser}`,config)
+    axios.delete(`https://productapp-backend.herokuapp.com/userremoveitem?id=${props.Product_ID}&userID=${currUser}`,config)
     .then(res=>{
       console.log(res)
       Cancelitem()
       window.location.href="/usercart"
     })
   }else{
-    axios.delete(`http://localhost:5000/userremovewishitem?id=${props.Product_ID}&userID=${currUser}`,config)
+    axios.delete(`https://productapp-backend.herokuapp.com/userremovewishitem?id=${props.Product_ID}&userID=${currUser}`,config)
     .then(res=>{
       console.log(res)
       Cancelitem()

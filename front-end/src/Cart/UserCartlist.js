@@ -32,7 +32,7 @@ function Cartlist() {
       setShow(!show)
     }
     const addingAddress = () =>{
-      axios.post(`http://localhost:5000/addaddress?id=${currUser}`,address,config)
+      axios.post(`https://productapp-backend.herokuapp.com/addaddress?id=${currUser}`,address,config)
       .then((res)=>{console.log("address added");
       setShow(!show)
    
@@ -42,7 +42,7 @@ function Cartlist() {
     }
 
     const editingAddress = () =>{
-      axios.put(`http://localhost:5000/edithomeaddress?id=${currUser}`,editAddress,config)
+      axios.put(`https://productapp-backend.herokuapp.com/edithomeaddress?id=${currUser}`,editAddress,config)
       .then((res)=>{console.log("address added");
       setEditShow(!editShow)
       setUserAdress(editAddress.house_name) 
@@ -57,7 +57,7 @@ function Cartlist() {
     }
     
     useEffect(async()=>{
-        await axios.get(`http://localhost:5000/Usercart?id=${currUser}`,config)
+        await axios.get(`https://productapp-backend.herokuapp.com/Usercart?id=${currUser}`,config)
         .then((res)=>{console.log(res)
           setCartProducts(res.data)
         setProdLen(res.data.length)})

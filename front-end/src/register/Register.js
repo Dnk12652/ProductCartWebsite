@@ -23,7 +23,7 @@ const history = useHistory()
   }
   const submitData=()=>{
     console.log(data)
-    axios.post("http://localhost:5000/api/users/register",data,{
+    axios.post("https://productapp-backend.herokuapp.com/api/users/register",data,{
       headers:{
         "Content-Type":"application/json"
           }

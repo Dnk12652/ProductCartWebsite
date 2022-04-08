@@ -12,7 +12,7 @@ function Productviewbeforelogin(props) {
   const display='Signin'
  
   useEffect(() => {
-    axios.get("http://localhost:5000/api/users/productview").then((res) => {
+    axios.get("https://productapp-backend.herokuapp.com/api/users/productview").then((res) => {
       console.log(res);
       setProducts(res.data);
       setProdLen(res.data.length);
