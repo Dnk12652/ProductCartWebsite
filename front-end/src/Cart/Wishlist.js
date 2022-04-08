@@ -9,7 +9,7 @@ import {useHistory} from "react-router-dom"
 import ProductHeaderCompo from '../commanComponent/ProductHeaderCompo';
 
 
-function Cartlist() {
+function Wishlist() {
   
    const  history =useHistory()
     const home = localStorage.getItem("home")
@@ -57,7 +57,7 @@ function Cartlist() {
     }
     
     useEffect(async()=>{
-        await axios.get(`http://localhost:5000/Usercart?id=${currUser}`,config)
+        await axios.get(`http://localhost:5000/Usergetwishlist?id=${currUser}`,config)
         .then((res)=>{console.log(res)
           setCartProducts(res.data)
         setProdLen(res.data.length)})
@@ -69,7 +69,7 @@ function Cartlist() {
           </div>
         {prodLen ? <div>
          
-        <div>{cartProducts.map((cartprod)=>{return <Cartprod action={'cart'}{...cartprod} />})}</div>
+        <div>{cartProducts.map((cartprod)=>{return <Cartprod action={'wishlist'} {...cartprod} />})}</div>
         <div className='user_cart_address_btn'>
         {home==null || ""?<button className="button_twobtn_color" onClick={ addAddressshow }>Add Address</button>:<button className='button_twobtn_color' onClick={editAddressroute}>Edit Address</button>}
         <div className='address'>
@@ -99,8 +99,8 @@ function Cartlist() {
     </div>
 
         </div>
-        :<div className='emptyUsercart'>your Cart Is Empty..add products to productview below button
-        <div className='zero_products_cart'>you need visit cart need some products?<button className='proceed_to_add_products' onClick={routeToAllProd}>Go to </button></div></div>}
+        :<div className='emptyUsercart'>your wish  Is Empty..add products to productview below button
+        <div className='zero_products_cart'>you need visit wishlist need some products?<button className='proceed_to_add_products' onClick={routeToAllProd}>Go to </button></div></div>}
         <div className='foraddress-btn'>
         
         </div>
@@ -110,4 +110,4 @@ function Cartlist() {
   )
 }
 
-export default Cartlist
+export default  Wishlist

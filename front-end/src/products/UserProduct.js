@@ -5,6 +5,7 @@ import {useHistory} from "react-router-dom"
 
 function UserProduct(props) {
   const UserProducts = props
+  const [wishshow,setwishshow]=useState(true)
  
 const history = useHistory()
   const userid= localStorage.getItem("user_id")
@@ -12,12 +13,23 @@ const history = useHistory()
     token :  getToken()
   }}
   const [show, setShow] = useState(true)
-
+  
     const addToCart = async  () => {
       setShow(false)
       if (props.bool){
         await  axios.post(`http://localhost:5000/UserAddtocart?id=${props.Product_ID}&userID=${userid}`,UserProducts ,config)
         .then((res)=>{console.log('aded to cart',res)})
+      }else{
+        history.push('/login')
+      }
+    
+    }
+    const addToWishlist = async  () => {
+      
+      setwishshow(false)
+      if (props.bool){
+        await  axios.post(`http://localhost:5000/UserAddtowishlist?id=${props.Product_ID}&userID=${userid}`,UserProducts ,config)
+        .then((res)=>{console.log('aded to wish list',res)})
       }else{
         history.push('/login')
       }
@@ -40,6 +52,13 @@ const history = useHistory()
             {show && <button className="useraddcart-btn" onClick={addToCart}>
               Add to Cart
             </button>}
+            {
+
+              wishshow && <button className="useraddcart-btn" onClick={addToWishlist}>
+                wishlist
+            </button>
+
+            }
           </div>
         </div>
       </div>

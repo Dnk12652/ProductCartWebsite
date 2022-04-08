@@ -16,6 +16,9 @@ function ProductHeaderCompo(props) {
     }
 
   }
+  const GoToWishlist=()=>{
+    history.push('/userwishlist')
+  }
  
   return (
     <div>
@@ -32,6 +35,13 @@ function ProductHeaderCompo(props) {
           <img width={65} onClick={GoToCart} height={60} src='https://cdn.iconscout.com/icon/free/png-512/shopping-cart-1433158-1211836.png' alt="cart pic"/>
           <h2>Go to cart</h2>
         </div>
+        }
+        {
+          props.bool &&
+          <div className='cart_img_prod'>
+            <img width={65} onClick={GoToWishlist} height={60}  src="https://thumbs.dreamstime.com/b/wishlist-icon-flat-style-like-document-vector-illustration-white-isolated-background-favorite-list-business-concept-174831206.jpg"/>
+            <h2>Go to wishlist</h2>
+            </div>
         }
         
        <a className='logout' onClick={UserLogout} href={props.action}>{props.display}</a>

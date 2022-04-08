@@ -8,7 +8,7 @@ function Productview(props) {
  
   const [products, setProducts] = useState([]);
   const [prodLength, setProdLen] = useState(0);
-  const [cart, setCart]= useState(true)
+ 
  
   const action='/login'
   const display='Logout'

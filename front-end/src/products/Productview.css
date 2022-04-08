@@ -68,8 +68,10 @@
     vertical-align: middle;
     border-radius: 15px;
     height: 10vh;
+    width: 45%;
+    margin-left: 2%;
     color: rgb(243, 238, 238);
-    padding: 2% 3% 3% 2%;
+    padding: 1% 2% 2% 1%;
     font-size: 20px;
     font-family: Roboto,Arial,sans-serif;
 }

@@ -16,14 +16,26 @@ function Cartprod(props) {
   const Cancelitem = () =>{
     setIsCancel(!isCancel)
   }
+  
   const Removeitem=()=>{
+    if (props.action==="cart"){
     axios.delete(`http://localhost:5000/userremoveitem?id=${props.Product_ID}&userID=${currUser}`,config)
     .then(res=>{
       console.log(res)
       Cancelitem()
       window.location.href="/usercart"
     })
+  }else{
+    axios.delete(`http://localhost:5000/userremovewishitem?id=${props.Product_ID}&userID=${currUser}`,config)
+    .then(res=>{
+      console.log(res)
+      Cancelitem()
+      window.location.href="/userwishlist"
+    })
   }
+  }
+
+
   return (
     <div className='parent_user_all_products'>
         <div className='cart_products_all_data'>

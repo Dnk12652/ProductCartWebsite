@@ -8,6 +8,7 @@ import Productviewbeforelogin from "../src/products/Productviewbeforelogin"
 
 import Productview from '../src/products/Productview';
 import Usercart from "../src/Cart/UserCartlist"
+import Wishlist  from './Cart/Wishlist';
 
 
 
@@ -27,6 +28,7 @@ function App() {
       <Route path="/register"   exact><Register/></Route>
       <Route path='/productview'  exact ><Productview></Productview></Route>
       <Route path='/usercart' exact component={Usercart}/>
+      <Route path='/userwishlist' exact component={Wishlist}/>
   
       {/* <PrivateRoute path='/orderc' exact  ><OrderConfirm/></PrivateRoute>  */}
        </Switch>
