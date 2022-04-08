@@ -48,12 +48,12 @@ func UserSignUp() gin.HandlerFunc {
 		defer cancel()
 		var user models.User
 		if err := c.BindJSON(&user); err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error(),"meg":"bye"})
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 			return
 		}
 		validationErr := Validate.Struct(user)
 		if validationErr != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": validationErr,"mes":"hai"})
+			c.JSON(http.StatusBadRequest, gin.H{"error": validationErr})
 			return
 		}
 
@@ -90,6 +90,7 @@ func UserSignUp() gin.HandlerFunc {
 		user.User_ID = user.ID.Hex()
 		user.Updated_At, _ = time.Parse(time.RFC3339, time.Now().Format(time.RFC3339))
 		user.UserCart = make([]models.ProductUser, 0)
+		user.Wishlist  =make([]models.WishlistUser, 0)
 		user.Address_Details = make([]models.Address, 0)
 		_, addingusererr := UserCollection.InsertOne(ctx, user)
 		if  addingusererr!= nil {

@@ -33,8 +33,13 @@ func main() {
 
 	// Your routes/addtocart are inconsistent starting with and without '/'.
 	router.POST("/UserAddtocart", app.AddToCart())
+	router.POST("/UserAddtowishlist", app.AddToWishlist())
+	
 	router.DELETE("/userremoveitem", app.RemoveItem())
+	router.DELETE("/userremovewishitem", app.RemoveWishItem())
+	router.GET("/Usergetwishlist",AllRoutes.GetItemFromWish())
 	router.GET("/Usercart",AllRoutes.GetItemFromCart())
+	router.GET("/UserWishlist",AllRoutes.GetItemFromCart())
 	router.POST("/addaddress", AllRoutes.AddAddress())
 	router.PUT("/edithomeaddress", AllRoutes.EditHomeAddress())
 
