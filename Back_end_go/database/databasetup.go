@@ -13,7 +13,7 @@ import (
 
 // DBSet is more Go-like compared to DBSet. Take a look at https://pkg.go.dev/database/sql@go1.17.2#OpenDB for example. Abbreviations are written in allcaps in Go. Examples: http.ServeTLS(), time.UTC
 func DBSet() *mongo.Client {
-	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://Naveen_126:lcL8Vz04PNHboXQm@test.aatxd.mongodb.net/Ecommercedata?retryWrites=true&w=majority"))
+	client, err := mongo.NewClient(options.Client().ApplyURI(//give mongodb connection here))
 	if err != nil {
 		log.Fatal(err)
 	}
